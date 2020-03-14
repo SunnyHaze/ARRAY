@@ -1,13 +1,14 @@
 #include <iostream>
-#include "Array.h"
+#include "Array.cpp"
 int main()
 {
-    Array<int> a(50);
-    for(int i = 0 ; i < 50 ; i++){
+    Array<int> a(10);
+    for(int i = 0 ; i < 10 ; i++){
         a[i] = i + 1;
     }
-    std::cout << std::endl;
-    std::cout << a[4];
+    for(int i = 0 ; i < 15 ; i++){
+        std:: cout << a[i] << std::endl;
+    }
 
     return 0;
 }

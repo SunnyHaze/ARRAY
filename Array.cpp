@@ -1,26 +1,6 @@
 #include "Array.h"
 
 template <class T>
-class Array
-{
-private:
-    T *alist;
-    int size;
-    void Error(ErrorType error, int badIndex = 0) const;
-
-public:
-    Array() = delete;
-    explicit Array(int = 50);
-    Array(const Array<T> &A);
-    ~Array();
-    Array<T> &operator=(const Array<T> &rhs);
-    T &operator[](int);
-    operator T *() const;
-    int ListSize() const;
-    void Resize(int);
-};
-
-template <class T>
 void Array<T>::Error(ErrorType error, int badIndex) const
 {
     std::cerr << errorMsg[error];
@@ -34,7 +14,7 @@ template <class T>
 Array<T>::Array(int sz)
 {
     if (sz <= 0)
-        Error(Sizerror);
+        Error(SizeError);
     size = sz;
     alist = new T[size];
     if (alist == nullptr)
